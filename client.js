@@ -1,3 +1,8 @@
+/**
+ * Establishes connection with the game server
+ */
+
+
 const net = require('net');
 const connect = function() {
   const conn = net.createConnection({ 
@@ -12,8 +17,9 @@ const connect = function() {
   })
 
   conn.on('connect', () => {
-    console.log('You are connected')
-    conn.write("Name: HSL")
+    console.log('You are connected');
+    conn.write("Name: HSL");
+    // setInterval(() => {conn.write("Move: up")}, 500)
   })
 
   return conn;
